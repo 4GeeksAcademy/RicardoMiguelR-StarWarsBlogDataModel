@@ -44,8 +44,7 @@ class Favorites(Base):
     # Here we define columns for the table address.
     # Notice that each column is also a normal Python instance attribute.
     id = Column(Integer, primary_key=True)
-    user_from_id = Column(Integer, ForeignKey('user.id'), primary_key=True)
-    user_to_id = Column(Integer, ForeignKey('user.id'), primary_key=True)
+    user_id = Column(Integer, ForeignKey('user.id'), primary_key=True)
     user = relationship(User)
     favorite_planet_id = Column(Integer, ForeignKey('planets.id'))
     planets = relationship(Planets)
